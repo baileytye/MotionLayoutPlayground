@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000"
+        motion:motionInterpolator="linear" />
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/searchBar"
+            android:alpha="0"
+            motion:layout_constraintBottom_toBottomOf="@id/buttonSearch"
+            motion:layout_constraintStart_toStartOf="@id/buttonSearch"
+            motion:layout_constraintTop_toTopOf="@id/buttonSearch">
+
+        </Constraint>
+        <Constraint
+            android:id="@+id/searchBackground"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_height="50dp"
+            motion:layout_constrainedHeight="true"
+            motion:layout_constraintBottom_toTopOf="@id/label"
+            motion:layout_constraintEnd_toStartOf="@id/buttonSearch"
+            motion:layout_constraintStart_toStartOf="@id/buttonSearch"
+            motion:layout_constraintTop_toTopOf="@id/background"
+            motion:layout_constraintVertical_bias="0.25" />
+        <Constraint
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="?actionBarSize"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            motion:autoSizeTextType="uniform"
+            motion:layout_constraintBottom_toBottomOf="@+id/background"
+            motion:layout_constraintStart_toStartOf="@+id/background" />
+        <Constraint
+            android:id="@+id/background"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="visible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/buttonSearch"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            motion:layout_constraintBottom_toBottomOf="@id/searchBackground"
+            motion:layout_constraintStart_toStartOf="@id/searchBackground"
+            motion:layout_constraintTop_toTopOf="@id/searchBackground">
+            <CustomAttribute
+                motion:attributeName="colorFilter"
+                motion:customColorValue="@android:color/white" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="8dp"
+            motion:layout_constraintBottom_toBottomOf="@+id/background"
+            motion:layout_constraintStart_toStartOf="parent" />
+        <Constraint
+            android:id="@id/background"
+            android:visibility="invisible"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/search">
+        <Constraint
+            android:id="@+id/label"
+            android:layout_width="wrap_content"
+            android:layout_height="?actionBarSize"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:visibility="invisible"
+            motion:autoSizeTextType="uniform"
+            motion:layout_constraintBottom_toBottomOf="@+id/background"
+            motion:layout_constraintStart_toStartOf="@+id/background" />
+        <Constraint
+            android:id="@+id/searchBar"
+            android:alpha="1"
+            motion:layout_constraintBottom_toBottomOf="@id/searchBackground"
+            motion:layout_constraintEnd_toEndOf="@id/searchBackground"
+            motion:layout_constraintStart_toEndOf="@id/buttonSearch"
+            motion:layout_constraintTop_toTopOf="@id/searchBackground" />
+        <Constraint
+            android:id="@+id/searchBackground"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_height="50dp"
+            motion:layout_constrainedHeight="true"
+            motion:layout_constraintBottom_toTopOf="@id/label"
+            motion:layout_constraintEnd_toEndOf="@id/background"
+            motion:layout_constraintStart_toStartOf="@id/background"
+            motion:layout_constraintTop_toTopOf="@id/background"
+            motion:layout_constraintVertical_bias="0.25" />
+        <Constraint
+            android:id="@+id/buttonSearch"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            motion:layout_constraintBottom_toBottomOf="@id/searchBackground"
+            motion:layout_constraintLeft_toLeftOf="@id/searchBackground"
+            motion:layout_constraintTop_toTopOf="@id/searchBackground">
+            <CustomAttribute
+                motion:attributeName="colorFilter"
+                motion:customColorValue="@color/colorPrimary" />
+        </Constraint>
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetEnd="@+id/search"
+        motion:constraintSetStart="@+id/start"
+        motion:duration="300">
+        <OnClick motion:targetId="@id/buttonSearch" />
+        <KeyFrameSet>
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="50"
+                motion:motionTarget="@+id/searchBar" />
+            <KeyAttribute
+                motion:framePosition="30"
+                motion:motionTarget="@+id/buttonSearch">
+                <CustomAttribute
+                    motion:attributeName="colorFilter"
+                    motion:customColorValue="@color/colorPrimary" />
+            </KeyAttribute>
+        </KeyFrameSet>
+
+    </Transition>
+</MotionScene>
