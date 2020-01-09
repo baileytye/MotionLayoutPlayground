@@ -26,6 +26,8 @@
             android:layout_marginEnd="8dp"
             android:layout_marginTop="8dp"
             android:layout_height="50dp"
+            android:scaleX="0"
+            android:scaleY="0"
             android:alpha="0"
             motion:layout_constrainedHeight="true"
             motion:layout_constraintBottom_toTopOf="@id/label"
@@ -41,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="?actionBarSize"
             android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
             android:alpha="1"
             motion:layout_constraintBottom_toBottomOf="@+id/background"
             motion:layout_constraintStart_toStartOf="@+id/background" />
@@ -89,8 +91,8 @@
             android:id="@+id/label"
             android:layout_width="wrap_content"
             android:layout_height="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginBottom="8dp"
             android:alpha="0"
             motion:layout_constraintBottom_toBottomOf="@+id/background"
             motion:layout_constraintStart_toStartOf="@+id/background" />
@@ -108,6 +110,8 @@
             android:layout_marginTop="8dp"
             android:layout_height="50dp"
             android:alpha="1"
+            android:scaleX="1"
+            android:scaleY="1"
             motion:layout_constrainedHeight="true"
             motion:layout_constraintBottom_toTopOf="@id/label"
             motion:layout_constraintEnd_toEndOf="@id/background"
@@ -134,7 +138,7 @@
     <Transition
         motion:constraintSetEnd="@+id/search"
         motion:constraintSetStart="@+id/start"
-        motion:duration="600">
+        motion:duration="700">
         <KeyFrameSet>
             <KeyAttribute
                 android:alpha="0"
@@ -156,7 +160,7 @@
             </KeyAttribute>
             <KeyAttribute
                 android:alpha="1"
-                motion:framePosition="35"
+                motion:framePosition="25"
                 motion:motionTarget="@+id/searchBackground" />
             <KeyPosition
                 motion:framePosition="55"
@@ -186,6 +190,14 @@
                 android:alpha="0"
                 motion:framePosition="90"
                 motion:motionTarget="@+id/buttonClose" />
+            <KeyAttribute
+                android:scaleX="1"
+                motion:framePosition="30"
+                motion:motionTarget="@+id/searchBackground" />
+            <KeyAttribute
+                android:scaleY="1"
+                motion:framePosition="30"
+                motion:motionTarget="@+id/searchBackground" />
         </KeyFrameSet>
     </Transition>
 </MotionScene>
