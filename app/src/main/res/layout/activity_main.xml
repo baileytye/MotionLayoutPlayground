@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:animateLayoutChanges="true"
+    android:clipToPadding="false"
     android:fitsSystemWindows="false">
 
     <LinearLayout
@@ -27,8 +28,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:translationZ="-1dp"
+            android:clipToPadding="false"
+            android:paddingBottom="100dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
     </LinearLayout>
+
+    <include
+        layout="@layout/fab_motion"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="end|bottom"
+        app:layout_anchorGravity="bottom|end" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

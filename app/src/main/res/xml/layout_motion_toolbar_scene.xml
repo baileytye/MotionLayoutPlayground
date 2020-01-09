@@ -138,17 +138,17 @@
         <KeyFrameSet>
             <KeyAttribute
                 android:alpha="0"
-                motion:framePosition="60"
+                motion:framePosition="55"
                 motion:motionTarget="@+id/searchBar" />
             <KeyAttribute
-                motion:framePosition="30"
+                motion:framePosition="35"
                 motion:motionTarget="@+id/buttonSearch">
                 <CustomAttribute
                     motion:attributeName="colorFilter"
                     motion:customColorValue="@color/colorPrimary" />
             </KeyAttribute>
             <KeyAttribute
-                motion:framePosition="60"
+                motion:framePosition="55"
                 motion:motionTarget="@+id/searchBackground">
                 <CustomAttribute
                     motion:attributeName="radius"
@@ -156,10 +156,10 @@
             </KeyAttribute>
             <KeyAttribute
                 android:alpha="1"
-                motion:framePosition="33"
+                motion:framePosition="35"
                 motion:motionTarget="@+id/searchBackground" />
             <KeyPosition
-                motion:framePosition="60"
+                motion:framePosition="55"
                 motion:motionTarget="@+id/searchBackground"
                 motion:percentWidth="0"
                 motion:percentX="0" />
@@ -169,7 +169,7 @@
                 motion:motionTarget="@+id/buttonSearch"
                 motion:percentX="1" />
             <KeyPosition
-                motion:framePosition="33"
+                motion:framePosition="35"
                 motion:motionTarget="@+id/label"
                 motion:percentHeight="1"
                 motion:percentY="1" />

@@ -9,12 +9,14 @@ import com.example.motionlayoutplayground.utils.addSpacing
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.layout_motion_toolbar.*
 
+
 const val CLOSED = 0
 const val OPEN = 1
 
 class MainActivity : AppCompatActivity() {
 
     var state = CLOSED
+    var fabMenuShown = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,4 +41,5 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = SimpleAdapter()
         recyclerView.addSpacing()
     }
+
 }
