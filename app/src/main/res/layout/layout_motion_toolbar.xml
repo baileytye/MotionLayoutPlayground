@@ -1,39 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.example.motionlayoutplayground.utils.CollapsibleToolbar xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/motionLayout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:animateLayoutChanges="true"
     android:minHeight="?actionBarSize"
+    android:clipToPadding="false"
     android:fitsSystemWindows="true"
     app:layout_scrollFlags="scroll|enterAlways|snap|exitUntilCollapsed"
     app:layoutDescription="@xml/layout_motion_toolbar_scene">
 
-    <ImageView
+    <View
         android:id="@+id/background"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:scaleType="centerCrop"
+        android:background="@drawable/rectangle_bottom_rounded"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:elevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@color/colorPrimaryDark" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:autoSizeTextType="uniform"
+        android:elevation="4dp"
         android:text="Projects"
         android:textColor="#FFF"
         android:textSize="32sp"
         app:layout_constraintBottom_toBottomOf="@+id/background"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <View
+    <androidx.cardview.widget.CardView
         android:id="@+id/searchBackground"
-        android:backgroundTint="@android:color/white"
-        android:background="@drawable/white_rectangle"
+        android:background="@android:color/white"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content" />
 
@@ -42,6 +47,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:padding="8dp"
+        android:elevation="5dp"
         android:background="@null"
         android:hint="Search Projects"
         app:layout_constraintBottom_toBottomOf="@id/searchBackground"
@@ -50,10 +56,25 @@
 
     <ImageButton
         android:id="@+id/buttonSearch"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:elevation="5dp"
         android:background="@color/transparent"
         android:src="@drawable/ic_search_24"
-        />
+        android:scaleType="fitCenter" />
 
-</com.example.motionlayoutplayground.utils.CollapsibleToolbar>
+    <ImageButton
+        android:id="@+id/buttonClose"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="16dp"
+        android:alpha="0"
+        android:background="@color/transparent"
+        android:elevation="5dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_baseline_close_24"
+        app:layout_constraintBottom_toBottomOf="@id/searchBackground"
+        app:layout_constraintEnd_toEndOf="@id/background"
+        app:layout_constraintTop_toTopOf="@id/searchBackground" />
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
