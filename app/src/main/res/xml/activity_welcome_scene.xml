@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="600">
+        <KeyFrameSet>
+            <KeyAttribute
+                android:translationY="15dp"
+                motion:framePosition="50"
+                motion:motionTarget="@+id/page1" />
+            <KeyAttribute
+                android:translationY="15dp"
+                motion:framePosition="0"
+                motion:motionTarget="@+id/page2" />
+            <KeyAttribute
+                android:translationY="0dp"
+                motion:framePosition="50"
+                motion:motionTarget="@+id/page2" />
+            <KeyAttribute
+                android:translationY="15dp"
+                motion:framePosition="100"
+                motion:motionTarget="@+id/page2" />
+            <KeyAttribute
+                android:translationY="-15dp"
+                motion:framePosition="50"
+                motion:motionTarget="@+id/page3" />
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="0"
+                motion:motionTarget="@+id/page2" />
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="0"
+                motion:motionTarget="@+id/page3" />
+            <KeyAttribute
+                android:alpha="1"
+                motion:framePosition="0"
+                motion:motionTarget="@+id/page1" />
+            <KeyAttribute
+                android:alpha="1"
+                motion:framePosition="50"
+                motion:motionTarget="@+id/page2" />
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="50"
+                motion:motionTarget="@+id/page3" />
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="50"
+                motion:motionTarget="@+id/page1" />
+            <KeyAttribute
+                android:alpha="1"
+                motion:framePosition="100"
+                motion:motionTarget="@+id/page3" />
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="100"
+                motion:motionTarget="@+id/page1" />
+            <KeyAttribute
+                android:alpha="0"
+                motion:framePosition="100"
+                motion:motionTarget="@+id/page2" />
+            <KeyAttribute
+                android:scaleX="3"
+                motion:framePosition="25"
+                motion:motionTarget="@+id/indicatorFilled" />
+            <KeyAttribute
+                android:scaleX="3"
+                motion:framePosition="75"
+                motion:motionTarget="@+id/indicatorFilled" />
+            <KeyAttribute
+                android:scaleX="1"
+                motion:framePosition="50"
+                motion:motionTarget="@+id/indicatorFilled" />
+            <KeyAttribute
+                android:scaleX="1"
+                motion:framePosition="100"
+                motion:motionTarget="@+id/indicatorFilled" />
+
+        </KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/page1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="45dp"
+            android:alpha="1"
+            motion:layout_constraintBottom_toBottomOf="@id/phone"
+            motion:layout_constraintLeft_toLeftOf="@id/phone"
+            motion:layout_constraintRight_toRightOf="@id/phone" />
+        <Constraint
+            android:id="@+id/page2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0"
+            motion:layout_constraintBottom_toBottomOf="@id/phone"
+            motion:layout_constraintLeft_toLeftOf="@id/phone"
+            motion:layout_constraintRight_toRightOf="@id/phone"
+            motion:layout_constraintTop_toTopOf="@id/phone" />
+        <Constraint
+            android:id="@+id/page3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0"
+            motion:layout_constraintBottom_toBottomOf="@id/phone"
+            motion:layout_constraintLeft_toLeftOf="@id/phone"
+            motion:layout_constraintRight_toRightOf="@id/phone"
+            motion:layout_constraintTop_toTopOf="@id/phone" />
+
+        <Constraint
+            android:id="@+id/indicatorFilled"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            motion:layout_constraintBottom_toBottomOf="@id/indicator1"
+            motion:layout_constraintLeft_toLeftOf="@id/indicator1"
+            motion:layout_constraintRight_toRightOf="@id/indicator1"
+            motion:layout_constraintTop_toTopOf="@id/indicator1" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@+id/page1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="45dp"
+            android:alpha="0"
+            motion:layout_constraintBottom_toBottomOf="@id/phone"
+            motion:layout_constraintLeft_toLeftOf="@id/phone"
+            motion:layout_constraintRight_toRightOf="@id/phone" />
+        <Constraint
+            android:id="@+id/page2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0"
+            motion:layout_constraintBottom_toBottomOf="@id/phone"
+            motion:layout_constraintLeft_toLeftOf="@id/phone"
+            motion:layout_constraintRight_toRightOf="@id/phone"
+            motion:layout_constraintTop_toTopOf="@id/phone" />
+        <Constraint
+            android:id="@+id/page3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="1"
+            motion:layout_constraintBottom_toBottomOf="@id/phone"
+            motion:layout_constraintLeft_toLeftOf="@id/phone"
+            motion:layout_constraintRight_toRightOf="@id/phone"
+            motion:layout_constraintTop_toTopOf="@id/phone" />
+
+        <Constraint
+            android:id="@+id/indicatorFilled"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            motion:layout_constraintBottom_toBottomOf="@id/indicator3"
+            motion:layout_constraintLeft_toLeftOf="@id/indicator3"
+            motion:layout_constraintRight_toRightOf="@id/indicator3"
+            motion:layout_constraintTop_toTopOf="@id/indicator3" />
+    </ConstraintSet>
+</MotionScene>
