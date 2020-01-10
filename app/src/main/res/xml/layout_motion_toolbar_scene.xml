@@ -192,9 +192,6 @@
                 motion:motionTarget="@+id/buttonClose" />
             <KeyAttribute
                 android:scaleX="1"
-                motion:framePosition="30"
-                motion:motionTarget="@+id/searchBackground" />
-            <KeyAttribute
                 android:scaleY="1"
                 motion:framePosition="30"
                 motion:motionTarget="@+id/searchBackground" />

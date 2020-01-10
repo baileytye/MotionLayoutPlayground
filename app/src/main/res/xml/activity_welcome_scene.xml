@@ -9,28 +9,29 @@
         <KeyFrameSet>
             <KeyAttribute
                 android:translationY="15dp"
+                android:alpha="0"
                 motion:framePosition="50"
                 motion:motionTarget="@+id/page1" />
             <KeyAttribute
                 android:translationY="15dp"
+                android:alpha="0"
                 motion:framePosition="0"
                 motion:motionTarget="@+id/page2" />
             <KeyAttribute
                 android:translationY="0dp"
+                android:alpha="1"
                 motion:framePosition="50"
                 motion:motionTarget="@+id/page2" />
             <KeyAttribute
                 android:translationY="15dp"
+                android:alpha="0"
                 motion:framePosition="100"
                 motion:motionTarget="@+id/page2" />
             <KeyAttribute
                 android:translationY="-15dp"
+                android:alpha="0"
                 motion:framePosition="50"
                 motion:motionTarget="@+id/page3" />
-            <KeyAttribute
-                android:alpha="0"
-                motion:framePosition="0"
-                motion:motionTarget="@+id/page2" />
             <KeyAttribute
                 android:alpha="0"
                 motion:framePosition="0"
@@ -41,28 +42,12 @@
                 motion:motionTarget="@+id/page1" />
             <KeyAttribute
                 android:alpha="1"
-                motion:framePosition="50"
-                motion:motionTarget="@+id/page2" />
-            <KeyAttribute
-                android:alpha="0"
-                motion:framePosition="50"
-                motion:motionTarget="@+id/page3" />
-            <KeyAttribute
-                android:alpha="0"
-                motion:framePosition="50"
-                motion:motionTarget="@+id/page1" />
-            <KeyAttribute
-                android:alpha="1"
                 motion:framePosition="100"
                 motion:motionTarget="@+id/page3" />
             <KeyAttribute
                 android:alpha="0"
                 motion:framePosition="100"
                 motion:motionTarget="@+id/page1" />
-            <KeyAttribute
-                android:alpha="0"
-                motion:framePosition="100"
-                motion:motionTarget="@+id/page2" />
             <KeyAttribute
                 android:scaleX="3"
                 motion:framePosition="25"

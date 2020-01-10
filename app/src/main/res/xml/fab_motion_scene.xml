@@ -54,9 +54,6 @@
                 motion:motionTarget="@+id/button1" />
             <KeyAttribute
                 android:scaleX="0.9"
-                motion:framePosition="10"
-                motion:motionTarget="@+id/button1" />
-            <KeyAttribute
                 android:scaleY="0.9"
                 motion:framePosition="10"
                 motion:motionTarget="@+id/button1" />
@@ -70,9 +67,6 @@
                 motion:motionTarget="@+id/button2" />
             <KeyAttribute
                 android:scaleX="0.9"
-                motion:framePosition="10"
-                motion:motionTarget="@+id/button3" />
-            <KeyAttribute
                 android:scaleY="0.9"
                 motion:framePosition="10"
                 motion:motionTarget="@+id/button3" />
@@ -90,9 +84,6 @@
                 motion:motionTarget="@+id/button1" />
             <KeyAttribute
                 android:scaleX="0.9"
-                motion:framePosition="3"
-                motion:motionTarget="@+id/buttonStart" />
-            <KeyAttribute
                 android:scaleY="0.9"
                 motion:framePosition="3"
                 motion:motionTarget="@+id/buttonStart" />
