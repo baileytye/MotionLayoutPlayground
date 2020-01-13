@@ -47,6 +47,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha="1"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="45dp"
+        app:layout_constraintBottom_toBottomOf="@id/phone"
+        app:layout_constraintLeft_toLeftOf="@id/phone"
+        app:layout_constraintRight_toRightOf="@id/phone"
         app:srcCompat="@drawable/ic_iso_building" />
 
     <ImageView
@@ -54,6 +59,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha="0"
+        app:layout_constraintBottom_toBottomOf="@id/phone"
+        app:layout_constraintLeft_toLeftOf="@id/phone"
+        app:layout_constraintRight_toRightOf="@id/phone"
+        app:layout_constraintTop_toTopOf="@id/phone"
         app:srcCompat="@drawable/ic_iso_notifications" />
 
     <ImageView
@@ -61,6 +70,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha="0"
+        app:layout_constraintBottom_toBottomOf="@id/phone"
+        app:layout_constraintLeft_toLeftOf="@id/phone"
+        app:layout_constraintRight_toRightOf="@id/phone"
+        app:layout_constraintTop_toTopOf="@id/phone"
         app:srcCompat="@drawable/ic_iso_people" />
 
     <ImageView
