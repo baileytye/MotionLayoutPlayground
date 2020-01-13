@@ -100,7 +100,7 @@
             android:id="@+id/searchBar"
             android:alpha="1"
             motion:layout_constraintBottom_toBottomOf="@id/searchBackground"
-            motion:layout_constraintEnd_toEndOf="@id/searchBackground"
+            motion:layout_constraintEnd_toStartOf="@id/buttonClose"
             motion:layout_constraintStart_toEndOf="@id/buttonSearch"
             motion:layout_constraintTop_toTopOf="@id/searchBackground" />
         <Constraint
@@ -136,6 +136,7 @@
         </Constraint>
     </ConstraintSet>
     <Transition
+        android:id="@+id/transitionStartToSearch"
         motion:constraintSetEnd="@+id/search"
         motion:constraintSetStart="@+id/start"
         motion:duration="700">
@@ -196,5 +197,20 @@
                 motion:framePosition="30"
                 motion:motionTarget="@+id/searchBackground" />
         </KeyFrameSet>
+    </Transition>
+    <ConstraintSet
+        android:id="@+id/empty"
+        motion:deriveConstraintsFrom="@+id/start">
+        <Constraint
+            android:id="@+id/buttonSearch"
+            android:visibility="gone" />
+    </ConstraintSet>
+    <Transition
+        android:id="@+id/startToEmpty"
+        motion:constraintSetEnd="@+id/empty"
+        motion:constraintSetStart="@+id/start">
+        <OnClick
+            motion:clickAction="toggle"
+            motion:targetId="@id/label" />
     </Transition>
 </MotionScene>

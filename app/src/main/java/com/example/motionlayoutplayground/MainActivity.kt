@@ -16,7 +16,6 @@ const val OPEN = 1
 class MainActivity : AppCompatActivity() {
 
     var state = CLOSED
-    var fabMenuShown = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,12 +26,16 @@ class MainActivity : AppCompatActivity() {
 
         buttonClose.setOnClickListener {
             if (state == OPEN) {
+                //Not required but incase there are multiple transitions
+                (includeMotionLayout as MotionLayout).setTransition(R.id.start, R.id.search)
+                (includeMotionLayout as MotionLayout).progress = 1f //setTransition resets progress
                 (includeMotionLayout as MotionLayout).transitionToStart()
                 state = CLOSED
             }
         }
         buttonSearch.setOnClickListener {
             if (state == CLOSED) {
+                (includeMotionLayout as MotionLayout).setTransition(R.id.start, R.id.search)
                 (includeMotionLayout as MotionLayout).transitionToEnd()
                 state = OPEN
             }

@@ -1,9 +1,11 @@
 package com.example.motionlayoutplayground.utils
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.motionlayoutplayground.BottomSheetActivity
 import com.example.motionlayoutplayground.R
 import kotlinx.android.synthetic.main.item_test.view.*
 
@@ -31,5 +33,8 @@ class SimpleAdapter : RecyclerView.Adapter<SimpleViewHolder>() {
 class SimpleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(item: String) {
         itemView.text.text = item
+        itemView.setOnClickListener {
+            it.context.startActivity(Intent(it.context, BottomSheetActivity::class.java))
+        }
     }
 }

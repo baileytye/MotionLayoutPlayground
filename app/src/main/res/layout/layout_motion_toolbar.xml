@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/motionLayout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/motionLayout"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:animateLayoutChanges="true"
-    android:minHeight="?actionBarSize"
     android:clipToPadding="false"
+    android:clipChildren="false"
     android:fitsSystemWindows="true"
-    app:layout_scrollFlags="scroll|enterAlways|snap|exitUntilCollapsed"
-    app:layoutDescription="@xml/layout_motion_toolbar_scene">
+    android:minHeight="?actionBarSize"
+    app:layoutDescription="@xml/layout_motion_toolbar_scene"
+    app:layout_scrollFlags="scroll|enterAlways|snap|exitUntilCollapsed">
 
     <View
         android:id="@+id/background"
@@ -36,20 +37,21 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/searchBackground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:background="@android:color/white"
         app:cardCornerRadius="10dp"
-        app:cardElevation="4dp"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content" />
+        app:cardElevation="4dp" />
 
     <EditText
         android:id="@+id/searchBar"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:padding="8dp"
-        android:elevation="5dp"
         android:background="@null"
+        android:elevation="5dp"
+        android:inputType="textShortMessage"
         android:hint="Search Projects"
+        android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="@id/searchBackground"
         app:layout_constraintStart_toEndOf="@id/buttonSearch"
         app:layout_constraintTop_toTopOf="@id/searchBackground" />
@@ -60,8 +62,9 @@
         android:layout_height="32dp"
         android:elevation="5dp"
         android:background="@color/transparent"
-        android:src="@drawable/ic_search_24"
-        android:scaleType="fitCenter" />
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_search_24" />
 
     <ImageButton
         android:id="@+id/buttonClose"
@@ -69,8 +72,9 @@
         android:layout_height="32dp"
         android:layout_marginEnd="16dp"
         android:alpha="0"
-        android:background="@color/transparent"
         android:elevation="5dp"
+        android:background="@color/transparent"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_baseline_close_24"
         app:layout_constraintBottom_toBottomOf="@id/searchBackground"
