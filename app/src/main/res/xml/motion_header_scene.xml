@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
+        motion:duration="1000">
+        <KeyFrameSet></KeyFrameSet>
+    </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/title">
+            <Transform
+                android:scaleX="1"
+                android:scaleY="1" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@+id/title">
+            <Transform
+                android:scaleX="0.7"
+                android:scaleY="0.7" />
+        </Constraint>
+    </ConstraintSet>
+    <ConstraintSet
+        android:id="@+id/gone"
+        motion:deriveConstraintsFrom="@+id/start">
+        <Constraint android:id="@+id/title">
+            <Transform
+                android:scaleX="0.4"
+                android:scaleY="0.4" />
+        </Constraint>
+    </ConstraintSet>
+    <Transition
+        motion:constraintSetEnd="@+id/gone"
+        motion:constraintSetStart="@+id/start"></Transition>
+</MotionScene>

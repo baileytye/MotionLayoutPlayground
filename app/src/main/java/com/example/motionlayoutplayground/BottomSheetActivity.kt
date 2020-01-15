@@ -8,7 +8,8 @@ import androidx.constraintlayout.motion.widget.MotionLayout
 import com.example.motionlayoutplayground.utils.SimpleAdapter
 import com.example.motionlayoutplayground.utils.addSpacing
 import com.google.android.material.bottomsheet.BottomSheetBehavior
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_bottom_sheet.*
+import kotlinx.android.synthetic.main.activity_main.recyclerView
 import kotlinx.android.synthetic.main.bottom_sheet.*
 import kotlinx.android.synthetic.main.bottom_sheet.view.*
 import kotlinx.android.synthetic.main.layout_motion_toolbar.*

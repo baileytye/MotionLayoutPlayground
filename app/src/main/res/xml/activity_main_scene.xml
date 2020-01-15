@@ -2,132 +2,9 @@
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
-    <ConstraintSet android:id="@+id/start">
-        <Constraint android:id="@+id/buttonClose">
-            <PropertySet android:alpha="0" />
-        </Constraint>
-        <Constraint
-            android:id="@+id/searchBar"
-            android:alpha="0"
-            motion:layout_constraintBottom_toBottomOf="@id/buttonSearch"
-            motion:layout_constraintStart_toStartOf="@id/buttonSearch"
-            motion:layout_constraintTop_toTopOf="@id/buttonSearch">
-
-        </Constraint>
-        <Constraint
-            android:id="@+id/searchBackground"
-            android:layout_width="50dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_height="50dp"
-            android:scaleX="0"
-            android:scaleY="0"
-            android:alpha="0"
-            motion:layout_constrainedHeight="true"
-            motion:layout_constraintBottom_toTopOf="@id/label"
-            motion:layout_constraintStart_toStartOf="@id/background"
-            motion:layout_constraintTop_toTopOf="@id/background"
-            motion:layout_constraintVertical_bias="0.25">
-            <CustomAttribute
-                motion:attributeName="radius"
-                motion:customDimension="30dp" />
-        </Constraint>
-        <Constraint android:id="@+id/label">
-            <Layout
-                android:layout_height="?actionBarSize"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                motion:layout_constraintBottom_toBottomOf="@+id/background"
-                motion:layout_constraintStart_toStartOf="@+id/background" />
-            <PropertySet android:alpha="1" />
-        </Constraint>
-        <Constraint
-            android:id="@+id/background"
-            android:layout_width="match_parent"
-            android:layout_height="120dp"
-            motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toTopOf="parent" />
-        <Constraint
-            android:id="@+id/buttonSearch"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            motion:layout_constraintBottom_toBottomOf="@id/searchBackground"
-            motion:layout_constraintStart_toStartOf="@id/searchBackground"
-            motion:layout_constraintTop_toTopOf="@id/searchBackground">
-            <CustomAttribute
-                motion:attributeName="colorFilter"
-                motion:customColorValue="@android:color/white" />
-        </Constraint>
-    </ConstraintSet>
-    <ConstraintSet
-        android:id="@+id/search"
-        motion:deriveConstraintsFrom="@id/start">
-        <Constraint android:id="@+id/buttonClose">
-            <PropertySet android:alpha="1" />
-        </Constraint>
-        <Constraint
-            android:id="@+id/background"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            motion:layout_constraintBottom_toBottomOf="parent"
-            motion:layout_constraintEnd_toEndOf="parent"
-            motion:layout_constraintStart_toStartOf="parent"
-            motion:layout_constraintTop_toTopOf="parent" />
-        <Constraint android:id="@+id/label">
-            <Layout
-                android:layout_height="16dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                motion:layout_constraintBottom_toBottomOf="@+id/background"
-                motion:layout_constraintStart_toStartOf="@+id/background" />
-            <PropertySet android:alpha="0" />
-        </Constraint>
-        <Constraint
-            android:id="@+id/searchBar"
-            android:alpha="1"
-            motion:layout_constraintBottom_toBottomOf="@id/searchBackground"
-            motion:layout_constraintEnd_toStartOf="@id/buttonClose"
-            motion:layout_constraintStart_toEndOf="@id/buttonSearch"
-            motion:layout_constraintTop_toTopOf="@id/searchBackground" />
-        <Constraint
-            android:id="@+id/searchBackground"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_height="50dp"
-            android:alpha="1"
-            android:scaleX="1"
-            android:scaleY="1"
-            motion:layout_constrainedHeight="true"
-            motion:layout_constraintBottom_toTopOf="@id/label"
-            motion:layout_constraintEnd_toEndOf="@id/background"
-            motion:layout_constraintStart_toStartOf="@id/background"
-            motion:layout_constraintTop_toTopOf="@id/background"
-            motion:layout_constraintVertical_bias="0.25">
-            <CustomAttribute
-                motion:attributeName="radius"
-                motion:customDimension="12dp" />
-        </Constraint>
-        <Constraint
-            android:id="@+id/buttonSearch"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginStart="10dp"
-            motion:layout_constraintBottom_toBottomOf="@id/searchBackground"
-            motion:layout_constraintLeft_toLeftOf="@id/searchBackground"
-            motion:layout_constraintTop_toTopOf="@id/searchBackground">
-            <CustomAttribute
-                motion:attributeName="colorFilter"
-                motion:customColorValue="@color/colorPrimary" />
-        </Constraint>
-    </ConstraintSet>
     <Transition
-        android:id="@+id/transitionStartToSearch"
-        motion:constraintSetEnd="@+id/search"
-        motion:constraintSetStart="@+id/start"
+        motion:constraintSetEnd="@+id/end"
+        motion:constraintSetStart="@id/start"
         motion:duration="500">
         <KeyFrameSet>
             <KeyAttribute
@@ -136,7 +13,7 @@
                 motion:motionTarget="@+id/searchBar" />
             <KeyAttribute
                 motion:framePosition="35"
-                motion:motionTarget="@+id/buttonSearch">
+                motion:motionTarget="@+id/buttonSearch2">
                 <CustomAttribute
                     motion:attributeName="colorFilter"
                     motion:customColorValue="@color/colorPrimary" />
@@ -160,11 +37,16 @@
             <KeyPosition
                 motion:framePosition="20"
                 motion:keyPositionType="deltaRelative"
-                motion:motionTarget="@+id/buttonSearch"
+                motion:motionTarget="@+id/buttonSearch2"
                 motion:percentX="1" />
             <KeyPosition
                 motion:framePosition="15"
                 motion:motionTarget="@+id/background"
+                motion:percentHeight="1"
+                motion:percentY="1" />
+            <KeyPosition
+                motion:framePosition="15"
+                motion:motionTarget="@+id/recyclerView"
                 motion:percentHeight="1"
                 motion:percentY="1" />
             <KeyAttribute
@@ -174,7 +56,7 @@
             <KeyAttribute
                 android:alpha="0"
                 motion:framePosition="95"
-                motion:motionTarget="@+id/buttonClose" />
+                motion:motionTarget="@+id/buttonClose2" />
             <KeyAttribute
                 android:scaleX="1"
                 android:scaleY="1"
@@ -182,4 +64,142 @@
                 motion:motionTarget="@+id/searchBackground" />
         </KeyFrameSet>
     </Transition>
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@+id/includeMotionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:progress="0" />
+        <Constraint android:id="@+id/buttonClose2">
+            <PropertySet android:alpha="0" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/searchBar"
+            android:alpha="0"
+            motion:layout_constraintBottom_toBottomOf="@id/buttonSearch2"
+            motion:layout_constraintStart_toStartOf="@id/buttonSearch2"
+            motion:layout_constraintTop_toTopOf="@id/buttonSearch2">
+
+        </Constraint>
+        <Constraint
+            android:id="@+id/searchBackground"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:alpha="0"
+            android:scaleX="0"
+            android:scaleY="0"
+            motion:layout_constrainedHeight="true"
+            motion:layout_constraintBottom_toTopOf="@id/label"
+            motion:layout_constraintStart_toStartOf="@id/background"
+            motion:layout_constraintTop_toTopOf="@id/background"
+            motion:layout_constraintVertical_bias="0.25">
+            <CustomAttribute
+                motion:attributeName="radius"
+                motion:customDimension="30dp" />
+        </Constraint>
+        <Constraint android:id="@+id/label">
+            <Layout
+                android:layout_height="?actionBarSize"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                motion:layout_constraintBottom_toBottomOf="@+id/background"
+                motion:layout_constraintStart_toStartOf="@+id/background" />
+            <PropertySet android:alpha="1" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/buttonSearch2"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            motion:layout_constraintBottom_toBottomOf="@id/searchBackground"
+            motion:layout_constraintStart_toStartOf="@id/searchBackground"
+            motion:layout_constraintTop_toTopOf="@id/searchBackground">
+            <CustomAttribute
+                motion:attributeName="colorFilter"
+                motion:customColorValue="@android:color/white" />
+        </Constraint>
+    </ConstraintSet>
+
+    <ConstraintSet
+        android:id="@+id/end"
+        motion:deriveConstraintsFrom="@id/start">
+        <Constraint
+            android:id="@+id/includeMotionLayout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            motion:layout_constraintLeft_toLeftOf="parent"
+            motion:layout_constraintRight_toRightOf="parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:progress="1" />
+        <Constraint android:id="@+id/buttonClose2">
+            <PropertySet android:alpha="1" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/background"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint android:id="@+id/label">
+            <Layout
+                android:layout_height="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                motion:layout_constraintBottom_toBottomOf="@+id/background"
+                motion:layout_constraintStart_toStartOf="@+id/background" />
+            <PropertySet android:alpha="0" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/searchBar"
+            android:alpha="1"
+            motion:layout_constraintBottom_toBottomOf="@id/searchBackground"
+            motion:layout_constraintEnd_toStartOf="@id/buttonClose2"
+            motion:layout_constraintStart_toEndOf="@id/buttonSearch2"
+            motion:layout_constraintTop_toTopOf="@id/searchBackground" />
+        <Constraint
+            android:id="@+id/searchBackground"
+            android:layout_height="50dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:alpha="1"
+            android:scaleX="1"
+            android:scaleY="1"
+            motion:layout_constrainedHeight="true"
+            motion:layout_constraintBottom_toTopOf="@id/label"
+            motion:layout_constraintEnd_toEndOf="@id/background"
+            motion:layout_constraintStart_toStartOf="@id/background"
+            motion:layout_constraintTop_toTopOf="@id/background"
+            motion:layout_constraintVertical_bias="0.25">
+            <CustomAttribute
+                motion:attributeName="radius"
+                motion:customDimension="12dp" />
+        </Constraint>
+        <Constraint
+            android:id="@+id/buttonSearch2"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="10dp"
+            motion:layout_constraintBottom_toBottomOf="@id/searchBackground"
+            motion:layout_constraintLeft_toLeftOf="@id/searchBackground"
+            motion:layout_constraintTop_toTopOf="@id/searchBackground">
+            <CustomAttribute
+                motion:attributeName="colorFilter"
+                motion:customColorValue="@color/colorPrimary" />
+        </Constraint>
+    </ConstraintSet>
 </MotionScene>
