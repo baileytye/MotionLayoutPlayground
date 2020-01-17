@@ -3,4 +3,6 @@
     <string name="long_text">Once you’ve created an outline in your Google Docs document, navigating through the document using the outline is easy. On the web, just click the section of the outline you want to access and your cursor will be moved to be beginning of that section.
 
 On Android and iOS devices, open the outline and tap the place in the outline where you want to go. Alternatively, if the outline is enabled, but hidden, and you begin to scroll through the document you’ll see a double-arrow slider appear on the right side of the document. Tap that to open the outline, then select the location in the outline you want to go. As with other methods, your cursor is placed at the beginning of that section.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

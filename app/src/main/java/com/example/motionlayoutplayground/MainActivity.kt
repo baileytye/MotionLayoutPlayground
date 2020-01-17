@@ -1,5 +1,6 @@
 package com.example.motionlayoutplayground
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.motionlayoutplayground.utils.SimpleAdapter
@@ -31,7 +32,9 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        recyclerView.adapter = SimpleAdapter()
+        recyclerView.adapter = SimpleAdapter {
+            startActivity(Intent(this, BottomSheetActivity::class.java))
+        }
         recyclerView.addSpacing()
     }
 

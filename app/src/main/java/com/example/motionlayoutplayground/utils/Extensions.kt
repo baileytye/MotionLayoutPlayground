@@ -5,6 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Parcelable
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import androidx.recyclerview.widget.RecyclerView
 import com.example.motionlayoutplayground.R
 
@@ -87,5 +90,46 @@ fun Intent.withExtras(vararg data: Pair<String, Any?>) {
         }
     }
 }
+
+/**
+ * Purpose: Begin fragment transaction with no animation
+ * Parameters:  block [Required] - block to execute with fragment manager
+ * Requires: -
+ * Usage: supportFragmentManager.inTransaction {add(frameId, fragment)}
+ * Source: ?
+ * Notes: Used by AppCompatActivity extensions to control fragments
+ */
+inline fun FragmentManager.inTransaction(block: FragmentTransaction.() -> FragmentTransaction) {
+    beginTransaction().block().commit()
+}
+
+/**
+ * Purpose: Add fragment with support fragment manager with no animation
+ * Parameters:  fragment [Required] - fragment to create
+ *              frameId [Required] - layout frame to put fragment in
+ * Requires: FragmentManager extension inTransAction
+ * Usage: addFragment(myFragment, R.id.frame)
+ * Source: Brain
+ * Notes: -
+ */
+fun AppCompatActivity.addFragment(fragment: Fragment, frameId: Int) {
+    supportFragmentManager.inTransaction { add(frameId, fragment) }
+}
+
+/**
+ * Purpose: Replace fragment with support fragment manager with no animation
+ * Parameters:  fragment [Required] - fragment to create
+ *              frameId [Required] - layout frame to put fragment in
+ * Requires: FragmentManager extension inTransAction
+ * Usage: replaceFragment(myFragment, R.id.frame)
+ * Source: Brain
+ * Notes: -
+ */
+fun AppCompatActivity.replaceFragment(fragment: Fragment, frameId: Int) {
+    supportFragmentManager.inTransaction { replace(frameId, fragment) }
+}
+
+
+
 
 

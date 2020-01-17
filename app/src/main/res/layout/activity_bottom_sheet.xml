@@ -34,6 +34,27 @@
             tools:listitem="@layout/item_test" />
     </LinearLayout>
 
-    <include layout="@layout/bottom_sheet" />
+    <LinearLayout
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="bottom"
+        android:background="@color/colorAccent"
+        android:orientation="horizontal"
+        android:translationZ="2dp"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="50dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <include layout="@layout/bottom_sheet_container" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

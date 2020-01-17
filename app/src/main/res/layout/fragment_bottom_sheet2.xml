@@ -12,7 +12,7 @@
         android:id="@+id/subHead"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Tasks"
+        android:text="Fragment 2"
         android:textColor="@color/colorPrimary"
         android:textSize="16sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -22,20 +22,11 @@
         android:id="@+id/head"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show History"
+        android:text="Room 1"
         android:textColor="@android:color/white"
         android:textSize="21sp"
         app:layout_constraintLeft_toLeftOf="@id/subHead"
         app:layout_constraintTop_toBottomOf="@id/subHead" />
-
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@id/head"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintLeft_toLeftOf="@id/head"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@id/head" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/bottomSheetRecycler"
